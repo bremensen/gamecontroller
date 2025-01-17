@@ -1,12 +1,39 @@
+input.onButtonPressed(Button.A, function () {
+    voeding += 1
+})
+input.onButtonPressed(Button.B, function () {
+    knuffel += 1
+})
+let dood = 0
+let knuffel = 0
+let voeding = 20
 basic.forever(function () {
-    basic.showNumber(0)
+    if ((knuffel && voeding) >= 10) {
+        basic.showIcon(IconNames.Happy)
+    }
+    if (voeding < 10) {
+        basic.showIcon(IconNames.Sad)
+    }
+    if (voeding && 0 == 0) {
+        basic.showIcon(IconNames.Asleep)
+    }
 })
 basic.forever(function () {
-    if (Kitronik_Game_Controller.buttonIsPressed(Kitronik_Game_Controller.ControllerButtonPins.Up) && Kitronik_Game_Controller.buttonIsPressed(Kitronik_Game_Controller.ControllerButtonPins.Right)) {
-        basic.showNumber(1)
-    } else if (false) {
-        if (Kitronik_Game_Controller.buttonIsPressed(Kitronik_Game_Controller.ControllerButtonPins.Down) && Kitronik_Game_Controller.buttonIsPressed(Kitronik_Game_Controller.ControllerButtonPins.Left)) {
-            basic.showNumber(1)
-        }
+    if (knuffel == 1) {
+        basic.showIcon(IconNames.Sad)
     }
+    if (knuffel == dood) {
+        basic.showIcon(IconNames.Asleep)
+    }
+})
+basic.forever(function () {
+    voeding += -1
+    basic.pause(1000)
+})
+basic.forever(function () {
+    dood = 0
+})
+basic.forever(function () {
+    knuffel += -1
+    basic.pause(1000)
 })
