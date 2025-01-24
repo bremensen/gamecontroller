@@ -20,9 +20,6 @@ basic.forever(function () {
     if (knuffel <= 10 && voeding <= 10 && (voeding < 0 && knuffel > 0)) {
         basic.showIcon(IconNames.Sad)
     }
-    if ((knuffel && voeding) <= 10 && (knuffel && voeding) > 0) {
-        basic.showIcon(IconNames.Sad)
-    }
 })
 basic.forever(function () {
     voeding += -1
